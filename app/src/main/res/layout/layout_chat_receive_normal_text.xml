@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data class="ReceiveNormalTextVHBinding">
+
+        <import type="android.view.View" />
+
+        <import
+            alias="ViewModel"
+            type="com.zylahealth.zylachatbot.viewmodel.ReceiveNormalTextVM" />
+
+        <variable
+            name="viewModel"
+            type="ViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_chat_receive_text_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/_96sdp">
+
+            <LinearLayout
+                android:id="@+id/ll_chat_receive_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:maxWidth="@dimen/_240sdp"
+                android:minWidth="@dimen/_96sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_chat_send_normal_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_rectangle_rounded_border_grey3_solid_white"
+                    android:lineSpacingMultiplier="1.25"
+                    android:maxWidth="@dimen/_240sdp"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingRight="@dimen/_12sdp"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:text="@{viewModel.chatBot.message}"
+                    android:textSize="@dimen/_12sdp" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_chat_receive_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_chat_receive_text"
+                android:layout_alignRight="@+id/ll_chat_receive_text"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="@{viewModel.chatBot.time}" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>
